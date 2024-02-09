@@ -12,12 +12,12 @@ def word_stats():
     # if bad input, fail
     if not word or (not word.replace(' ', '').isalpha()):
         return render_template("fail.html")
-    else:
-        words = word.split(" ")
-        word_count = len(words)
-        char_count = len(word)
-        avg_word_length = None
-        for word in words:
-            avg_word_length += len(word)
-        avg_word_length /= words
-        return render_template("success.html", word_count=word_count, char_count=char_count, avg_word_length=avg_word_length)
+
+    words = word.split(" ")
+    word_count = len(words)
+    char_count = len(word)
+    avg_word_length = 0
+    for word in words:
+        avg_word_length += len(word)
+    avg_word_length /= word_count
+    return render_template("success.html", word=word, word_count=word_count, char_count=char_count, avg_word_length=avg_word_length)

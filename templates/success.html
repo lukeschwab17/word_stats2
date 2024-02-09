@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block body %}
+ <h1>{{ word }}</h1>
+ <h3>Word Count:</h3>
+  <p>{{ word_count }}</p>
+ <h3>Character Count:</h3>
+  <p> {{ char_count }}</p>
+ <h3>Average Word(s) Length:</h3>
+  <p> {{ avg_word_length }}</p>
+{% endblock %}

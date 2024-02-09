@@ -3,7 +3,8 @@
 
 {% block body %}
     <form action="/word" method="post">
-        <input name="word" placeholder="Word" type="text" required autofocus>
+        <label for="word">Enter alpha-numeric word/phrase:</label>
+        <input name="word" id = "word" placeholder="Write Here!" type="text" required autofocus>
         <button type="submit">SUBMIT</button>
     </form>
 {% endblock %}
