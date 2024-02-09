@@ -9,8 +9,8 @@ def index():
 @app.route("/word", methods=["POST"])
 def word_stats():
     word = request.form.get("word")
-    # if no input, fail
-    if not word:
+    # if bad input, fail
+    if not word or (not word.replace(' ', '').isalpha()):
         return render_template("fail.html")
     else:
         words = word.split(" ")
